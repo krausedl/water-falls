@@ -1,8 +1,8 @@
-import 'dart:async';
+// import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/modified_snake.dart';
-import 'package:sensors_plus/sensors_plus.dart';
+// import 'package:sensors_plus/sensors_plus.dart';
 
 class SensorHomePage extends StatefulWidget {
   const SensorHomePage({super.key, this.title});
@@ -20,6 +20,8 @@ class SensorHomePageState extends State<SensorHomePage> {
 
   late final Snake _snake;
 
+  // unused sensor readouts, their listeners were causing extra page rebuilds
+  /*
   List<double>? _accelerometerValues;
   List<double>? _userAccelerometerValues;
   List<double>? _gyroscopeValues;
@@ -33,6 +35,7 @@ class SensorHomePageState extends State<SensorHomePage> {
       subscription.cancel();
     }
   }
+  */
 
   @override
   void initState() {
@@ -42,6 +45,8 @@ class SensorHomePageState extends State<SensorHomePage> {
       columns: _snakeColumns,
       cellSize: _snakeCellSize,
     );
+
+    /*
     _streamSubscriptions.add(
       accelerometerEvents.listen((AccelerometerEvent event) {
         setState(() {
@@ -70,6 +75,7 @@ class SensorHomePageState extends State<SensorHomePage> {
         });
       }),
     );
+    */
   }
 
   @override
