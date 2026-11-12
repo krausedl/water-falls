@@ -106,11 +106,10 @@ class SnakeState extends State<Snake> {
   @override
   void initState() {
     super.initState();
+    // listener: store only, no setState
     _streamSubscription =
         accelerometerEvents.listen((AccelerometerEvent event) {
-      setState(() {
-        acceleration = event;
-      });
+      acceleration = event;
     });
 
     _timer = Timer.periodic(const Duration(milliseconds: 200), (_) {
